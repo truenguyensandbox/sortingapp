@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorting App</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Sorting App</h1>
+    <p>Understand one code, understand them all.</p>
+  </header>
+
+  <section class="controls">
+    <input id="array-input" type="text" placeholder="Enter numbers (e.g., 5,3,1,4)">
+    <select id="algorithm-selector">
+      <option value="quick">Quick Sort</option>
+      <option value="merge">Merge Sort</option>
+      <option value="bubble">Bubble Sort</option>
+      <option value="insertion">Insertion Sort</option>
+      <option value="selection">Selection Sort</option>
+    </select>
+    <button id="custom-sort-button">Visualize Sort</button>
+  </section>
+
+  <section id="bars-container" class="bars"></section>
+
+  <section class="code-switcher">
+    <h2>View Code in Different Languages</h2>
+    <button class="lang-btn" data-lang="javascript">JavaScript</button>
+    <button class="lang-btn" data-lang="python">Python</button>
+    <button class="lang-btn" data-lang="c">C</button>
+
+    <pre id="code-javascript" class="code-snippet">
+function bubbleSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      }
+    }
+  }
+  return arr;
+}
+    </pre>
+
+    <pre id="code-python" class="code-snippet" style="display:none;">
+def bubble_sort(arr):
+    for i in range(len(arr)):
+        for j in range(0, len(arr) - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+    </pre>
+
+    <pre id="code-c" class="code-snippet" style="display:none;">
+void bubbleSort(int arr[], int n) {
+  for (int i = 0; i < n-1; i++) {
+    for (int j = 0; j < n-i-1; j++) {
+      if (arr[j] > arr[j+1]) {
+        int temp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1] = temp;
+      }
+    }
+  }
+}
+    </pre>
+  </section>
+
+  <footer>
+    <span id="footer-quote">❤️ Powered by logic.</span>
+  </footer>
+</body>
+</html>
